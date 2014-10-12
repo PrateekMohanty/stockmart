@@ -1,9 +1,10 @@
 StockMart
 =========
-
+<br>
 The StockMart Project
-
-
+<br>
+<br>
+<pre>
 Steps for cloning in eclipse:
 
 1) Install EGit in Eclipse by following these steps:
@@ -37,3 +38,4 @@ To run the project in Eclipse Tomcat:
 
 
 ENJOY :)
+</pre>
