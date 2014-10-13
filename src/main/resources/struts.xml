@@ -6,6 +6,8 @@
 <struts>
 
     <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="global"></constant>
+    
     <include file="struts-default.xml" />
 
     <package name="samplepackage" extends="struts-default">
@@ -14,7 +16,7 @@
             <result>/WEB-INF/pages/index.jsp</result>
         </action>
         
-        <action name="sampleaction" class="org.iitp.stockmart.action.BaseAction" method="execute">
+        <action name="sampleaction" class="org.iitp.stockmart.actions.BaseAction" method="execute">
             <result name="success">/WEB-INF/pages/index.jsp</result>
         </action>
 
