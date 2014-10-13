@@ -38,4 +38,8 @@ To run the project in Eclipse Tomcat:
 
 
 ENJOY :)
+<<<<<<< HEAD
 </pre>
+=======
+</pre>
+>>>>>>> branch 'master' of https://github.com/iitp-stockmart/stockmart.git
