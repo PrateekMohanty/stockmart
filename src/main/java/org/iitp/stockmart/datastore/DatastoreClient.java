@@ -70,5 +70,24 @@ public class DatastoreClient {
 		}
 		return user;
 	}
+	
+	public User tryRegister(String username, String password){
+		User user = null;
+		int resultSet = 0;
+		try {
+			connect();
+			String query = "INSERT INTO FROM Users (username, password) Values ('" + username
+					+ "', '" + password + "')";
+			resultSet = stmt.executeUpdate(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+			if(resultSet > 0){
+				user = tryLogin(username, password);
+			}
+		}
+		return user;
+	}
 
 }
