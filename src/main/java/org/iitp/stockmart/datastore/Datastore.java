@@ -35,13 +35,15 @@ public class Datastore {
 		private Company company;
 		private int quantity;
 		private String orderMode;	// BuyOrder/SellOrder
+		private int limitPrice;	//-1 for market order & otherwise positive
 		
-		protected Order(String orderId, User user, Company company, int quantity, String orderMode){
+		protected Order(String orderId, User user, Company company, int quantity, String orderMode, int limitPrice){
 			this.orderId = orderId;
 			this.user = user;
 			this.company = company;
 			this.quantity = quantity;
 			this.orderMode = orderMode;
+			this.limitPrice = limitPrice;
 		}
 		
 		public String getID() {
@@ -63,21 +65,12 @@ public class Datastore {
 		public String getOrderMode() {
 			return orderMode;
 		}
-	}
-	
-	public static class LimitOrder extends Order {
-		private int limitPrice;
 		
-		LimitOrder(String orderId, User user, Company company, int quantity, String orderMode, int price) {
-			super(orderId, user, company, quantity, orderMode);
-			limitPrice = price;
-		}
-		
-		public int getLimit() {
+		public int getLimitPrice() {
 			return limitPrice;
 		}
 	}
-	
+		
 	public static class Company {
 	}
 }
